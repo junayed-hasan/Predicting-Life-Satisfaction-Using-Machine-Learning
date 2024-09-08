@@ -1,5 +1,5 @@
 # Predicting-Life-Satisfaction-Using-Machine-Learning
-Welcome to our research repository! This repository contains a Jupyter Notebook illustrating the computational analysis and visualization done as part of our research. Here, you will find the steps and code snippets used to process the data, build, and validate models, alongside visualizing the results.
+Welcome to our research repository! This repository contains a Jupyter Notebook illustrating the computational analysis and visualization done as part of our research article published in Heliyon titled "Predicting life satisfaction using machine learning and explainable AI" ([Link](https://www.sciencedirect.com/science/article/pii/S2405844024071895)). Here, you will find the steps and code snippets used to process the data, build, and validate models, alongside visualizing the results.
 
 ## Getting Started
 
