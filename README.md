@@ -1,82 +1,144 @@
-# Predicting-Life-Satisfaction-Using-Machine-Learning
-Welcome to our research repository! This repository contains a Jupyter Notebook illustrating the computational analysis and visualization done as part of our research article published in Heliyon titled "Predicting life satisfaction using machine learning and explainable AI" ([Link](https://www.sciencedirect.com/science/article/pii/S2405844024071895)). Here, you will find the steps and code snippets used to process the data, build, and validate models, alongside visualizing the results.
+# Predicting Life Satisfaction Using Machine Learning and Explainable AI
+
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Repository Structure](#repository-structure)
+3. [Highlights](#highlights)
+4. [Getting Started](#getting-started)
+   - [Prerequisites](#prerequisites)
+   - [Installation](#installation)
+5. [Dataset](#dataset)
+6. [Notebook Structure](#notebook-structure)
+7. [Results and Insights](#results-and-insights)
+8. [Explainable AI](#explainable-ai)
+9. [Ablation Studies](#ablation-studies)
+10. [Citation](#citation)
+11. [Contact](#contact)
+12. [License](#license)
+
+---
+
+## Introduction
+This repository accompanies the research article *"Predicting Life Satisfaction Using Machine Learning and Explainable AI"*, published in **Heliyon**. The project demonstrates how advanced machine learning and explainable AI (XAI) techniques can predict life satisfaction with high accuracy. The dataset, sourced from the SHILD survey in Denmark, provides critical insights into factors affecting well-being. The study also explores the use of large language models (LLMs) for predicting life satisfaction, achieving significant results.
+
+**Publication Link:** [Heliyon Article](https://www.sciencedirect.com/science/article/pii/S2405844024071895)
+
+---
+
+## Repository Structure
+```
+├── Figures/                   # Contains visualizations used in the notebooks
+├── LICENSE                    # License information
+├── README.md                  # Repository documentation
+├── Predicting_Life_Satisfaction.ipynb  # Main Jupyter Notebook
+```
+
+---
+
+## Highlights
+- Achieved **93.8% accuracy** and **73% macro F1-score** for predicting life satisfaction.
+- Used **Recursive Feature Elimination with Cross-Validation (RFECV)** to identify 27 key determinants of life satisfaction.
+- Employed **Explainable AI** techniques to ensure interpretability and transparency of predictions.
+- Explored **Large Language Models (LLMs)** like BERT, BioBERT, and ClinicalBERT to predict life satisfaction using natural language sentences.
+- Conducted **ablation studies** on data resampling and feature selection techniques to optimize model performance.
+
+---
 
 ## Getting Started
 
 ### Prerequisites
+- **Python 3.6+**: Download [here](https://www.python.org/downloads/)
+- **Jupyter Notebook**: Install via pip:
+  ```bash
+  pip install notebook
+  ```
 
-Ensure you have the following installed:
-- **Python:** Our analyses are conducted using Python. You need to have Python installed to run the Jupyter Notebook. Download it [here](https://www.python.org/downloads/).
-- **Jupyter Notebook:** This is where all the magic happens! You can install it using pip (Python’s package installer). If you haven’t installed pip, you can get it [here](https://pip.pypa.io/en/stable/installation/).
-
-### Libraries
-To run the notebook, the following libraries are required. You can install them using pip:
-
-```bash
-pip install numpy pandas matplotlib scikit-learn seaborn missingno imbalanced-learn scikit-plot xgboost lightgbm
-
-```
-## Overview of Libraries
-- **[NumPy](https://numpy.org/) and [Pandas](https://pandas.pydata.org/)**: Employed for data manipulation and analysis.
-- **[Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/)**: Utilized for creating static, animated, and interactive visualizations in Python.
-- **[Scikit-learn](https://scikit-learn.org/stable/)**: Applied for various machine learning models and data preprocessing.
-- **[Missingno](https://github.com/ResidentMario/missingno)**: Beneficial for visualizing missing data.
-- **[Imbalanced-learn](https://imbalanced-learn.org/stable/)**: Valuable for addressing imbalanced datasets through resampling techniques.
-- **[Scikit-plot](https://scikit-plot.readthedocs.io/en/stable/)**: Handy for visualizing machine learning results and metrics.
-- **[XGBoost](https://xgboost.readthedocs.io/en/latest/)**: Implemented for the XGBoost algorithm, an optimized gradient-boosting machine learning library.
-- **[LightGBM](https://lightgbm.readthedocs.io/en/latest/)**: Incorporated for utilizing the LightGBM algorithm, a gradient boosting framework that uses tree-based learning algorithms.
-
-### Clone the Repository
-To get started, clone this repository to your local machine using the following command:
+### Installation
+Clone the repository and navigate to the directory:
 ```bash
 git clone https://github.com/alifelham/Predicting-Life-Satisfaction-Using-Machine-Learning.git
+cd Predicting-Life-Satisfaction-Using-Machine-Learning
 ```
-Navigate to the cloned directory:
 
+Install required libraries:
 ```bash
-cd [REPO DIRECTORY]
+pip install numpy pandas matplotlib scikit-learn seaborn missingno imbalanced-learn scikit-plot xgboost lightgbm
 ```
 
-### Launch Jupyter Notebook 
-Run the following command to start Jupyter Notebook:
-```bash
-jupyter notebook
-```
-Navigate through the Jupyter Notebook interface in your browser to open the notebook.
+---
 
-### How to run
-- To use a custom dataset similar to the SHILD dataset, upload it in the same folder as then ipynb file.
-- There are several models included in the ipynb file itself, the user can choose to run any of them for testing purposes.
-- After uploading our pretrained model our obtained results can be reproduced.
-  
 ## Dataset
-* SHILD (Survey of Health Impairment and Living Conditions in Denmark): 
-Get the dataset from **[here](https://doi.org/10.5061/dryad.qd2nj)**
+The dataset is sourced from the **SHILD (Survey of Health Impairment and Living Conditions in Denmark)**. It is publicly available under a **CC0 1.0 Universal Public Domain Dedication license**.
 
-### License of the Dataset 
-Licensed under a **[CC0 1.0 Universal (CC0 1.0) Public Domain Dedication license.](https://creativecommons.org/publicdomain/zero/1.0/)**
+**Dataset Link:** [SHILD Dataset](https://doi.org/10.5061/dryad.qd2nj)
+
+---
 
 ## Notebook Structure
-Our notebook is structured as follows:
+1. **Data Importing and Preprocessing**: Handles missing values, categorical encoding, and outlier management.
+2. **Exploratory Data Analysis**: Visualizations and data summaries.
+3. **Model Building**: Implements ML models such as Random Forest, XGBoost, and LightGBM.
+4. **Model Evaluation**: Uses metrics like accuracy, F1-score, precision, recall, and AUC-ROC.
+5. **Results Visualization**: Displays model performance and insights.
+6. **Explainable AI**: Interprets predictions using XAI techniques.
+7. **Age Group Analysis**: Examines primary determinants across different age brackets.
 
-1. Data Importing and Preprocessing: Loading the dataset and performing initial preprocessing.
-2. Exploratory Data Analysis: Visualizations and summaries to understand the data.
-3. Model Building: Implementing machine learning models (Random Forest, Logistic Regression, etc.) and tuning their parameters.
-4. Model Evaluation: Evaluating model performance using various metrics.
-5. Results Visualization: Graphically representing the results obtained.
-6. Explainable AI: Used to interpret the results of the models.
+---
 
+## Results and Insights
+### Key Performance Metrics:
+| Model               | Accuracy (%) | F1-Score (%) | Precision (%) | Recall (%) |
+|---------------------|--------------|--------------|---------------|------------|
+| Random Forest       | 93.8         | 70.6         | 72.0          | 69.3       |
+| Gradient Boosting   | 92.2         | 70.3         | 67.9          | 73.7       |
+| XGBoost             | 93.0         | 68.5         | 68.7          | 68.2       |
+| Ensemble (Best)     | **93.6**     | **73.0**     | 71.9          | 74.3       |
 
-## Contact Details of the Authors:
-Alif Elham Khan: alif.khan1@northsouth.edu
+### Insights:
+- Health condition is the most critical determinant across all age groups.
+- Dual data resampling (SMOTE + undersampling) improves both accuracy and F1-score.
+- RFECV-based feature selection outperforms PCA-based approaches.
 
-Mohammad Junayed Hasan: mohammad.hasan5@northsouth.edu
+---
 
-Humayra Anjum: humayra.anjum@northsouth.edu
+## Explainable AI
+Explainable AI was employed to ensure model transparency. The framework explains how each input feature contributes to the prediction, providing actionable insights for stakeholders like policymakers and healthcare professionals.
 
-Dr. Nabeel Mohammad: nabeel.mohammed@northsouth.edu
+**Example Visualization:**
+*Add visualizations here for model explanations or prediction thresholds.*
 
-Dr. Sifat Momen: sifat.momen@northsouth.edu
+---
 
-## Acknowledgement
-A big thanks to our peers and reviewers for their valuable inputs. We would like to acknowledge our supervisors, Dr. Sifat Momen and Dr. Nabeel Mohammed for their patience and guidance during this research.
+## Ablation Studies
+### Data Resampling:
+The dual strategy of oversampling and undersampling led to significant improvements in model performance, achieving a balanced precision-recall tradeoff.
+
+### Feature Selection:
+RFECV selected 27 key features, surpassing PCA in both accuracy and interpretability.
+
+---
+
+## Citation
+If you use this repository, please cite the following:
+```bibtex
+@article{alifelham2024lifesatisfaction,
+    title={Predicting life satisfaction using machine learning and explainable AI},
+    author={Alif Elham Khan, Mohammad Junayed Hasan, Humayra Anjum, Nabeel Mohammed, Sifat Momen},
+    journal={Heliyon},
+    year={2024},
+    doi={10.1016/j.heliyon.2024.e31158}
+}
+```
+
+---
+
+## Contact
+For questions or collaboration, contact:
+- **Alif Elham Khan**: [alif.khan1@northsouth.edu](mailto:alif.khan1@northsouth.edu)
+- **Mohammad Junayed Hasan**: [mohammad.hasan5@northsouth.edu](mailto:mohammad.hasan5@northsouth.edu)
+- **Humayra Anjum**: [humayra.anjum@northsouth.edu](mailto:humayra.anjum@northsouth.edu)
+
+---
+
+## License
+This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
